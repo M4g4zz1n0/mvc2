@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>MVC Web application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+<h1>Detail of person:</h1>
+
+<!--I used a table to get a better view of the data.-->
+<div>
+    <table>
+        <tr>
+            <td>Id:</td>
+            <td th:text="${person.id}">------</td>
+        </tr>
+        <tr>
+            <td>Name:</td>
+            <td th:text="${person.firstName}">------</td>
+        </tr>
+        <tr>
+            <td>Surname:</td>
+            <td th:text="${person.lastName}">------</td>
+        </tr>
+    </table>
+</div>
+
+<!-- It is possible edit or delete the selected user. -->
+<a href="" th:href="@{edit(id=${person.id})}"> edit </a><br>
+<a href="" th:href="@{delete(id=${person.id})}"> delete </a><br>
+<a href="list"> Show the list </a>
+
+</body>
+</html>
